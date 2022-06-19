@@ -68,6 +68,8 @@ function showArticleIndex() {
   $(".article-toc").hide();
   $(".article-toc.active-toc").removeClass("active-toc");
   $("#tree .active").next().addClass('active-toc');
+	$(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-right");
+	$(".file.active i").removeClass("fa-angle-right").addClass('fa-angle-down');
 
   var labelList = $("#article-content").children();
   var content = "<ul>";
@@ -208,13 +210,26 @@ function serachTree() {
     }
     // 有值就搜索，并且展开父目录
     else {
-      $(".fa-plus-square-o").removeClass("fa-plus-square-o").addClass(
-          "fa-minus-square-o");
-      $("#tree ul").css("display", "none");
-      var searchResult = $("#tree li").find(
-          "a:contains('" + inputContent + "')");
-      if (searchResult.length) {
-        showActiveTree(searchResult.parent(), false)
+      if ($('#local-search-result').length>0 && inputContent.length === 3 && (inputContent.substr(0,3).toLowerCase() === 'in:' || inputContent.substr(0,3).toLowerCase()==='in：')) {
+          // 全文搜索
+          $.getScript('/js/search.js', function () {
+              searchFunc("/search.xml", 'search-input', 'local-search-result');
+          })
+      }
+      if ($('#local-search-result').length>0 && inputContent.length>3 && (inputContent.substr(0,3).toLowerCase() === 'in:' || inputContent.substr(0,3).toLowerCase()==='in：')) {
+          $('#local-search-result').show();
+          $("#tree ul").css("display", "none");
+
+          searchAll(inputContent.substr(3))
+      } else {
+        $('#local-search-result').hide();
+
+        $(".fa-plus-square-o").removeClass("fa-plus-square-o").addClass("fa-minus-square-o");
+        $("#tree ul").css("display", "none");
+        var searchResult = $("#tree li").find("a:contains('" + inputContent + "')");
+        if ( searchResult.length ) {
+          showActiveTree(searchResult.parent(), false)
+        }
       }
     }
   });

@@ -35,10 +35,26 @@ siteStartYear: 2019
 searchEngine: https://www.google.com/search?q=
 homeHost: wujun234.github.io
 
-#tags: true
-#categories: true
+tags: true
+categories: true
 
 # 左侧导航栏，用文件名还是文章名
 sidebar:
   # usePostTitle 为 ture 用文章名，不填或为 false 用文件名
   usePostTitle: false
+
+searchAll: true
+# true 启用全文搜索
+# 在搜索框输入'in: 关键字' 实现全文搜索
+# 开启此功能需要下面操作：
+# 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
+# 2. 在 hexo 根目录的 _config.xml 中添加下面内容
+# search:
+#   path: search.xml
+#   field: post
+
+searchTOC: true
+# true 启用对各文章toc的搜索
+
+expandAll: true
+# true '空格'展开目录树所有文章

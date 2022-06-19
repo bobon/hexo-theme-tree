@@ -113,6 +113,23 @@ a {
 	text-indent: 20px;
 	color: #64cfff;
 }
+#local-search-result .search-result-list .search-result {
+	padding: 0 16px 0 32px;
+	margin: 0;
+	color: #808080;
+ }
+ .search-result-list .search-result .search-keyword,
+ #local-search-result .search-result-list .search-result .search-keyword {
+	color: #f00;
+	font-style: normal;
+	font-weight:bold;
+ }
+ #local-search-result a {
+	display: block;
+	color: #42b983 !important;
+	position: relative;
+    padding-top: 10px;
+ }
 .sidebar-toc {
 	position: absolute;
 	top: 0;
@@ -140,6 +157,7 @@ a {
 	height: calc( 100% - 5px );
 	padding-top: 5px;
 }
+#local-search-result,
 #tree{
 	height: calc( 100% - 50px );
 	overflow: auto;
