@@ -1,6 +1,8 @@
 ## Bobon 所做的修改
-merge https://github.com/chinobing/hexo-theme-tree，实现“本地搜索”。
-
+merge https://github.com/chinobing/hexo-theme-tree ，实现“本地搜索”。  
+  
+Demo: https://bobon.github.io  
+  
 
 ## Hexo 主题 Tree
 
