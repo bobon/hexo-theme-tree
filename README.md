@@ -1,3 +1,7 @@
+## Bobon 所做的修改
+merge https://github.com/chinobing/hexo-theme-tree，实现“本地搜索”。
+
+
 ## Hexo 主题 Tree
 
 一个简洁的主题，主要功能是 “树状导航” + “树状目录”，可选配“评论”和“阅读量”功能，支持基于搜索引擎的全站搜索。通过 fancybox 支持图片点击放大。
