@@ -3,7 +3,7 @@ merge https://github.com/chinobing/hexo-theme-tree ，实现“本地搜索”�
   
 Demo: https://bobon.github.io  
   
-
+  
 ## Hexo 主题 Tree
 
 一个简洁的主题，主要功能是 “树状导航” + “树状目录”，可选配“评论”和“阅读量”功能，支持基于搜索引擎的全站搜索。通过 fancybox 支持图片点击放大。
@@ -20,7 +20,7 @@ Demo：[https://wujun234.github.io/](https://wujun234.github.io/)
 
 下载主题到 `hexo` 根目录中 `themes` 目录下
 ```
-git clone https://github.com/wujun234/hexo-theme-tree.git  themes/tree
+git clone https://github.com/bobon/hexo-theme-tree.git  themes/tree
 ```
 
 修改 `hexo` 根目录的 `_config.yml`
@@ -103,7 +103,7 @@ tags: true
 ```
 hexo new page "categories"
 ```
-编辑 source/tags/index.md
+编辑 source/categories/index.md
 ```
 ---
 title: categories
@@ -158,3 +158,39 @@ highlight:
 
 ### 访问管理
 我自己用的是百度统计 https://tongji.baidu.com ，很简单，注册后在 'head' 里加一个 '<script>' 块就行了
+  
+  
+## 增加“本地搜索功能”
+下载插件到 `hexo` 根目录中 `node_modules` 目录下
+```
+git clone https://github.com/bobon/hexo-theme-tree.git  node_modules
+```
+  
+修改 `hexo` 根目录的 `_config.yml`，添加
+```
+# local search
+search:
+  path: search.xml
+  field: all
+  content: true
+```
+  
+修改主题 `tree` 目录的 `_config.yml`，添加
+```
+searchAll: true
+# true 启用全文搜索
+# 在搜索框输入'in: 关键字' 实现全文搜索
+# 开启此功能需要下面操作：
+# 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
+# 2. 在 hexo 根目录的 _config.xml 中添加下面内容
+# search:
+#   path: search.xml
+#   field: post
+
+searchTOC: true
+# true 启用对各文章toc的搜索
+
+expandAll: true
+# true '空格'展开目录树所有文章
+```
+  
