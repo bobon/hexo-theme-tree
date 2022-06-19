@@ -163,7 +163,7 @@ highlight:
 ## 增加“本地搜索功能”
 下载插件到 `hexo` 根目录中 `node_modules` 目录下
 ```
-git clone https://github.com/bobon/hexo-theme-tree.git  node_modules
+git clone https://github.com/bobon/hexo-generator-search.git  node_modules
 ```
   
 修改 `hexo` 根目录的 `_config.yml`，添加
