@@ -57,7 +57,7 @@
 	<%- js('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js') %>
 	<%- js('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js') %>
 	<%- js('https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js') %>
-	<%- js('js/main.js') %>
+	<!--%- js('js/main.js') %-->
 	<% if (theme.valine){ %>
 		<%- js('https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js') %>
 		<%- js('https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js') %>
@@ -65,4 +65,11 @@
 	<% if (theme.busuanzi){ %>
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	<% } %>
+	
+	<script src="<%- config.root %>js/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			serachTree("<%- config.root %>");
+		});
+	</script>
 </head>
