@@ -12,7 +12,7 @@
           <% if (site.tags.data[j] && site.tags.data[j].name) { %>
             <li class="menu-item">
                 <span>
-                      <a href="/<%- site.tags.data[j].path %>"><%- site.tags.data[j].name %>(<%- site.tags.data[j].length %>)</a>
+                      <a href="<%- config.root %><%- site.tags.data[j].path %>"><%- site.tags.data[j].name %>(<%- site.tags.data[j].length %>)</a>
                 </span>
             </li>
           <% } %>

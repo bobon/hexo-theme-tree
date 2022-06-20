@@ -17,7 +17,7 @@
                                 <% if (post.categories.data[j] && post.categories.data[j].name) { %>
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/<%- post.categories.data[j].path %>"><%- post.categories.data[j].name %></a>
+                                        <a href="<%- config.root %><%- post.categories.data[j].path %>"><%- post.categories.data[j].name %></a>
 										<% if (j < post.categories.data.length - 1) { %>
 											>
 										<% } %>

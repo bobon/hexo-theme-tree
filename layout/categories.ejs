@@ -11,7 +11,7 @@
           <% if (site.categories.data[j] && site.categories.data[j].name) { %>
             <li class="menu-item">
                 <span>
-                    <a href="/<%- site.categories.data[j].path %>"><%- site.categories.data[j].name %>(<%- site.categories.data[j].length %>)</a>
+                    <a href="<%- config.root %><%- site.categories.data[j].path %>"><%- site.categories.data[j].name %>(<%- site.categories.data[j].length %>)</a>
                 </span>
             </li>
           <% } %>
