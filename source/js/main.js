@@ -241,8 +241,16 @@ function serachTree(path) {
 
       if (inputContent.length === 0) {
       } else {
-        window.open(searchEngine + inputContent + "%20site:" + homeHost,
-            "_blank");
+        //window.open(searchEngine + inputContent + "%20site:" + homeHost,
+        //    "_blank");
+        // 全文搜索
+        $.getScript(path + 'js/search.js', function () {
+          searchFunc(path + "search.xml", 'search-input', 'local-search-result');
+        })
+        $('#local-search-result').show();
+        $("#tree ul").css("display", "none");
+
+        searchAll(inputContent)
       }
     }
   });
