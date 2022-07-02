@@ -7,11 +7,32 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<script src="<%- config.root %>js/local-search.js"></script>
 
 <header id="header">
     <a id="title" href="<%= url_for() %>" class="logo"><%- config.title %></a>
+	
+	<div class="site-search">
+		<div class="popup search-popup" style="display: none;">
+			<div class="search-header">
+				<span class="search-icon"><i class="fa fa-search"></i></span>
+				<div class="search-input-container"> 
+					<input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+				</div>
+				<span class="popup-btn-close">
+					<i class="fa fa-times-circle"></i>
+				</span>
+			</div>
+			<div id="search-result"></div>
+		</div>
+		<div class="search-pop-overlay" style="display: none;"></div>
+	</div>
 
 	<ul id="menu">
+		<li class="menu-item menu-item-search" style="opacity: 1; transform: translateY(0px);">
+			<a role="button" class="popup-trigger menu-item-link"><i class="fa fa-search fa-fw"></i>搜索</a>
+		</li>
+		
 		<li class="menu-item">
 			<a href="<%- config.root %>about" class="menu-item-link">ABOUT</a>
 		</li>
@@ -32,6 +53,7 @@ var _hmt = _hmt || [];
 				UidGenerator
 			</a>
 		</li-->
+		
 		<li class="menu-item">
 			<a href="https://github.com/bobon" class="menu-item-link" target="_blank">
 				<i class="fa fa-github fa-2x"></i>

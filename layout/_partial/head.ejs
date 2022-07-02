@@ -66,10 +66,34 @@
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	<% } %>
 	
+	<script id="hexo-configurations">
+		var CONFIG={
+			//hostname:new URL("<%- config.root %>").hostname,
+			root:"<%- config.root %>"
+			,scheme:"Gemini"
+			,version:"7.7.1"
+			,exturl:!1
+			,sidebar:{position:"left",display:"post",padding:18,offset:12,onmobile:!1}
+			,copycode:{enable:!0,show_result:!0,style:null}
+			,back2top:{enable:!0,sidebar:!1,scrollpercent:!0}
+			,bookmark:{enable:!1,color:"#222",save:"auto"}
+			,fancybox:!1,mediumzoom:!1,lazyload:!1,pangu:!1
+			,comments:{style:"tabs",active:null,storage:!0,lazyload:!1,nav:null}
+			,localsearch:{enable:!0,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1
+					,cdn:{enable:0,url:"//cdn.jsdelivr.net/gh/voidking/voidking.github.io/search.xml"}}
+					,path:"search.xml"
+					,motion:{enable:!0,async:!1
+							,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"
+						}
+					}
+			}
+	</script>
+
 	<script src="<%- config.root %>js/main.js"></script>
-	<script>
+	<script src="<%- config.root %>js/search.js"></script>
+	<!--script>
 		$(document).ready(function () {
 			serachTree("<%- config.root %>");
 		});
-	</script>
+	</script-->
 </head>

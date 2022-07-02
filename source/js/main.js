@@ -1,7 +1,7 @@
 $(document).ready(function () {
   hljs.initHighlightingOnLoad();
   clickTreeDirectory();
-  //serachTree();
+  serachTree();
   pjaxLoad();
   showArticleIndex();
   switchTreeOrIndex();
@@ -185,7 +185,8 @@ function pjaxLoad() {
 }
 
 // 搜索框输入事件
-function serachTree(path) {
+function serachTree() {
+  var root = CONFIG.root;
   // 解决搜索大小写问题
   jQuery.expr[':'].contains = function (a, i, m) {
     return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
@@ -212,9 +213,9 @@ function serachTree(path) {
     else {
       if ($('#local-search-result').length>0 && inputContent.length === 3 && (inputContent.substr(0,3).toLowerCase() === 'in:' || inputContent.substr(0,3).toLowerCase()==='in：')) {
           // 全文搜索
-          $.getScript(path + 'js/search.js', function () {
-              searchFunc(path + "search.xml", 'search-input', 'local-search-result');
-          })
+          //$.getScript(root + 'js/search.js', function () {
+              searchFunc(root + "search.xml", 'search-input', 'local-search-result');
+          //})
       }
       if ($('#local-search-result').length>0 && inputContent.length>3 && (inputContent.substr(0,3).toLowerCase() === 'in:' || inputContent.substr(0,3).toLowerCase()==='in：')) {
           $('#local-search-result').show();
@@ -244,9 +245,9 @@ function serachTree(path) {
         //window.open(searchEngine + inputContent + "%20site:" + homeHost,
         //    "_blank");
         // 全文搜索
-        $.getScript(path + 'js/search.js', function () {
-          searchFunc(path + "search.xml", 'search-input', 'local-search-result');
-        })
+        //$.getScript(root + 'js/search.js', function () {
+          searchFunc(root + "search.xml", 'search-input', 'local-search-result');
+        //})
         $('#local-search-result').show();
         $("#tree ul").css("display", "none");
 
